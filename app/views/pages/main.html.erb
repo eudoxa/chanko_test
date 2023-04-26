@@ -1,0 +1,13 @@
+<div style="margin: 100px;">
+  <ul>
+    <li><%= "ViewInstance id: #{self.class.__id__}" %></li>
+    <li><%= "ViewClass id: #{self.class.__id__}" %></li>
+    <li><%= "HelloWorld(Experiment) Class id: #{HelloWorld.__id__}" %></li>
+    <li><%= "Friend Class id: #{Friend.__id__}" %></li>
+    <li><%= "Zeitwerk enabled: #{Rails.autoloaders.zeitwerk_enabled?}" %></li>
+  </ul>
+  <%= render "sample" %>
+  <%= invoke(:hello_world, :hello) do %>
+    hello world
+  <%- end %>
+</div>
